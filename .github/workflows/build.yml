@@ -11,7 +11,7 @@ on:
         required: true
         default: ''
     branches:
-      - master
+      - version/pinnacle
     paths:
       - version.py
       - .github/workflows/build.yml
@@ -40,7 +40,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ${{ github.event.inputs.docker_username }}/nas-tools
+            ${{ github.event.inputs.docker_username }}/pinnacle
           tags: |
             type=raw,value=${{ env.app_version }}
             type=raw,value=latest
@@ -93,7 +93,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ${{ github.event.inputs.docker_username }}/nas-tools
+            ${{ github.event.inputs.docker_username }}/pinnacle
           tags: |
             type=raw,value=${{ env.app_version }}
             type=raw,value=debian
